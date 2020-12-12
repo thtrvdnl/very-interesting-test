@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'core/index.html' %}
+
+{% block title %}Сайт{% endblock %}
+
+{% block content %}
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
         <h5 class="my-0 mr-md-auto font-weight-normal">Places Remember</h5>
         <a class="btn btn-outline-primary" href="{% url 'social:begin' 'facebook' %}">Войти с помощью Facebook</a>
@@ -15,5 +11,4 @@
         <h1 class="display-4">Places Remember</h1>
         <p class="lead">веб-приложение, с помощью которого люди смогут хранить свои впечатления о посещаемых местах</p>
     </div>
-</body>
-</html>
+{% endblock %}

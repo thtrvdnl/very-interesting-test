@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from environs import Env
 
@@ -108,3 +109,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
