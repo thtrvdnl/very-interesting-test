@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'places_remember.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': env.str('SQL_ENGINE'),
+        'NAME': env.str('SQL_DATABASE'),
+        'USER': env.str('SQL_USER'),
+        'PASSWORD': env.str('SQL_PASSWORD'),
+        'HOST': env.str('SQL_HOST'),
+        'PORT': env.str('SQL_PORT'),
     }
 }
 
@@ -108,5 +112,6 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
